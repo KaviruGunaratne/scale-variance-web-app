@@ -37,7 +37,10 @@ fig = plot_curves(selected_dataset, selected_run, selected_algorithms, False, ma
                   f"KL Divergence Curves for {selected_dataset} (Run {selected_run})",
                   "KL Divergence"
 )
-st.plotly_chart(fig, use_container_width=True)
+if fig is None:
+    st.error(f"Data for the {selected_dataset} dataset at Run {selected_run} does not currently exist.")
+else:
+    st.plotly_chart(fig, use_container_width=True)
 
 # Plot Projections
 st.markdown("### Projections")
