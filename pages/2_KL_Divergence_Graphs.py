@@ -29,7 +29,7 @@ max_x = st.sidebar.slider("Max X Value", min_value=dataInfo.min_x, max_value=dat
 
 # Select Algorithms to Plot
 st.sidebar.markdown("### Algorithms Plotted")
-selected_algorithms = [alg for alg in ALGORITHMS if st.sidebar.checkbox(alg, value=True)]
+selected_algorithms = [alg for alg in ALGORITHMS if st.sidebar.checkbox(alg, value=alg != 'UMAP')]
 
 
 # Plot KL Divergences
